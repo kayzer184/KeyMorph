@@ -1,62 +1,68 @@
+import { useEffect, createContext } from 'react'
+import { RouterProvider, Outlet } from '@tanstack/react-router'
 import { invoke } from '@tauri-apps/api/core'
-import { platform } from '@tauri-apps/plugin-os'
-import { useState, useEffect } from 'react'
-import TitleBar from './UI/TitleBar'
-import KeyBoard from './UI/KeyBoard'
-import '../styles/App.scss'
+import { router } from '../router'
+import TitleBar from './TitleBar'
+import { Sidebar } from './SideBar'
 
-function App() {
-	const [theme, setTheme] = useState<string>()
-	const [os, setOs] = useState<string>()
+interface ThemeContextType {
+	theme?: string
+	setTheme: (theme: string) => void
+}
 
+export const ThemeContext = createContext<ThemeContextType>({
+	setTheme: () => {},
+})
+
+export const AppLayout = ({ os, theme, setTheme }: { os?: string, theme?: string, setTheme: (theme: string) => void }) => {
 	useEffect(() => {
-		async function init() {
-			setTheme(await invoke('plugin:theme|get_theme'))
-			setOs(await platform())
-		}
-		init()
+		document
+			.querySelectorAll('*')
+			.forEach(el => el.setAttribute('tabindex', '-1'))
 	}, [])
-
+		
 	useEffect(() => {
-		if (theme) {
-			invoke('plugin:theme|set_theme', { theme })
+		if (!theme) return
 
-			const updateTheme = () => {
-				document.documentElement.setAttribute(
-					'data-theme',
-					theme === 'auto'
-						? window.matchMedia('(prefers-color-scheme: dark)').matches
-							? 'dark'
-							: 'light'
-						: theme
-				)
-			}
+		const updateTheme = async () => {
+			await invoke('plugin:theme|set_theme', { theme })
 
-			updateTheme()
-
-			const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-			mediaQuery.addEventListener('change', updateTheme)
-
-			return () => mediaQuery.removeEventListener('change', updateTheme)
+			document.documentElement.className =
+				theme === 'auto'
+					? window.matchMedia('(prefers-color-scheme: dark)').matches
+						? 'dark'
+						: 'light'
+					: theme
 		}
+
+		updateTheme()
+
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		mediaQuery.addEventListener('change', updateTheme)
+		return () => mediaQuery.removeEventListener('change', updateTheme)
 	}, [theme])
 
 	return (
-		<>
-			{os === 'windows' && <TitleBar />}
-			<main
-				className='container'
+		<ThemeContext.Provider value={{ theme, setTheme }}>
+			<div
+				className={`grid h-screen ${
+					os === 'windows' ? 'grid-rows-[32px_1fr]' : 'grid-rows-1'
+				}`}
 			>
-				<div className='main-container'>
-					<p>Theme: {theme}</p>
-					<button onClick={() => setTheme('auto')}>Set auto theme</button>
-					<button onClick={() => setTheme('light')}>Set light theme</button>
-					<button onClick={() => setTheme('dark')}>Set dark theme</button>
-					<KeyBoard />
+				{os === 'windows' && <TitleBar />}
+				<div className='flex h-full overflow-hidden'>
+					<Sidebar className='h-full' />
+					<main className='flex-1 p-12'>
+						<Outlet />
+					</main>
 				</div>
-			</main>
-		</>
+			</div>
+		</ThemeContext.Provider>
 	)
+}
+
+function App() {
+	return <RouterProvider router={router} />
 }
 
 export default App

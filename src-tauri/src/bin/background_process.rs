@@ -16,7 +16,7 @@ fn main() {
                 "isPressed": event.is_pressed
             });
             
-            println!("Test");
+            println!("{}", data);
         }
         thread::sleep(Duration::from_millis(10));
     }

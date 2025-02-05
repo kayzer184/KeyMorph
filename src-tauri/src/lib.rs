@@ -4,8 +4,6 @@ use std::sync::Mutex;
 use std::sync::Arc;
 use tauri::Emitter;
 use std::io::{BufRead, BufReader};
-use key_director::DeviceState;
-use tauri::window::Window;
 
 // Храним ID процесса
 static BACKGROUND_PROCESS: once_cell::sync::Lazy<Arc<Mutex<Option<Child>>>> = 
@@ -38,10 +36,13 @@ async fn start_background(app_handle: tauri::AppHandle) -> Result<(), String> {
     std::thread::spawn(move || {
         let reader = BufReader::new(stdout);
         for line in reader.lines() {
-            if let Ok(line) = line {
-                app_handle_clone
-                    .emit("keyboard-event", line)
-                    .unwrap_or_else(|e| eprintln!("Ошибка отправки события: {}", e));
+            match line {
+                Ok(line) => {
+                    app_handle_clone
+                        .emit("key-event", line)
+                        .unwrap_or_else(|e| eprintln!("Emit error: {}", e));
+                }
+                Err(e) => eprintln!("Error reading line: {}", e)
             }
         }
     });

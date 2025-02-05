@@ -6,7 +6,9 @@
 	"app": {
 		"windows": [
 			{
-				"decorations": true
+				"decorations": true,
+				"titleBarStyle": "Overlay",
+				"hiddenTitle": true
 			}
 		]
 	}
