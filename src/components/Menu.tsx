@@ -13,11 +13,18 @@ interface KeyProps {
 const Key = ({ letter, width = 'w-12', isPressed, onPress }: KeyProps) => {
 	return (
 		<motion.div
+			initial={{
+				borderWidth: '1px',
+				borderColor: 'var(--border)',
+			}}
 			animate={{
 				scale: isPressed ? 0.9 : 1,
 				backgroundColor: isPressed ? 'var(--primary)' : 'var(--card)',
 				color: isPressed ? 'var(--primary-foreground)' : 'var(--foreground)',
 				y: isPressed ? 4 : 0,
+				borderWidth: isPressed ? '2px' : '1px',
+				borderColor: isPressed ? 'var(--primary)' : 'var(--border)',
+				filter: isPressed ? 'brightness(1.05)' : 'brightness(1)',
 			}}
 			transition={{
 				duration: 0.1,
@@ -30,8 +37,6 @@ const Key = ({ letter, width = 'w-12', isPressed, onPress }: KeyProps) => {
 				${width} 
 				h-12 
 				rounded-lg 
-				border 
-				border-border 
 				flex 
 				items-center 
 				justify-center 
@@ -337,14 +342,17 @@ export function Menu() {
 			}
 		})
 
-		invoke('start_background')
-			.then(() => console.log('Background process started'))
-			.catch(e => console.error('Failed to start background process:', e))
+		// Проверяем, запущен ли уже процесс
+		invoke('start_background').catch(e => {
+			// Если процесс уже запущен, это нормально
+			if (e === 'Процесс уже запущен') {
+				console.log('Background process already running')
+			} else {
+				console.error('Failed to start background process:', e)
+			}
+		})
 
 		return () => {
-			invoke('stop_background')
-				.then(() => console.log('Background process stopped'))
-				.catch(e => console.error('Failed to stop background process:', e))
 			unlisten.then(fn => fn())
 		}
 	}, [])

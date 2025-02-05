@@ -4,6 +4,7 @@ use std::sync::Mutex;
 use std::sync::Arc;
 use tauri::Emitter;
 use std::io::{BufRead, BufReader};
+use tauri::Manager;
 
 // Храним ID процесса
 static BACKGROUND_PROCESS: once_cell::sync::Lazy<Arc<Mutex<Option<Child>>>> = 
@@ -12,10 +13,22 @@ static BACKGROUND_PROCESS: once_cell::sync::Lazy<Arc<Mutex<Option<Child>>>> =
 #[tauri::command]
 async fn start_background(app_handle: tauri::AppHandle) -> Result<(), String> {
     let mut process = BACKGROUND_PROCESS.lock().map_err(|e| e.to_string())?;
-    if process.is_some() {
-        return Err("Процесс уже запущен".to_string());
+    
+    // Проверяем, жив ли процесс
+    if let Some(child) = &mut *process {
+        match child.try_wait() {
+            Ok(None) => {
+                // Процесс все еще работает
+                return Ok(());
+            }
+            Ok(Some(_)) | Err(_) => {
+                // Процесс завершился или ошибка - очищаем
+                *process = None;
+            }
+        }
     }
 
+    // Если процесса нет или он завершился, запускаем новый
     let executable_path = std::env::current_exe()
         .map_err(|e| e.to_string())?
         .parent()
@@ -69,6 +82,20 @@ pub fn run() {
         .plugin(tauri_plugin_prevent_default::init())
         .plugin(tauri_plugin_theme::init(ctx.config_mut()))
         .invoke_handler(tauri::generate_handler![start_background, stop_background])
-        .run(ctx)
-        .expect("error while running tauri application");
+        .build(ctx)
+        .expect("error while building tauri application")
+        .run(|app_handle, event| match event {
+            tauri::RunEvent::WindowEvent {
+                label: _,
+                event: tauri::WindowEvent::CloseRequested { api, .. },
+                ..
+            } => {
+                // Скрываем окно вместо закрытия
+                if let Some(window) = app_handle.get_window("main") {
+                    window.hide().unwrap();
+                    api.prevent_close();
+                }
+            }
+            _ => {}
+        });
 }

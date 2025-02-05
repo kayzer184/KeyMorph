@@ -1,4 +1,4 @@
-import { useEffect, createContext } from 'react'
+import { useEffect, createContext, type ReactNode } from 'react'
 import { RouterProvider, Outlet } from '@tanstack/react-router'
 import { invoke } from '@tauri-apps/api/core'
 import { router } from '../router'
@@ -14,13 +14,20 @@ export const ThemeContext = createContext<ThemeContextType>({
 	setTheme: () => {},
 })
 
-export const AppLayout = ({ os, theme, setTheme }: { os?: string, theme?: string, setTheme: (theme: string) => void }) => {
+interface AppLayoutProps {
+	os?: string
+	theme?: string
+	setTheme: (theme: string) => void
+	children?: ReactNode
+}
+
+export const AppLayout = ({ theme, setTheme }: AppLayoutProps) => {
 	useEffect(() => {
 		document
 			.querySelectorAll('*')
 			.forEach(el => el.setAttribute('tabindex', '-1'))
 	}, [])
-		
+
 	useEffect(() => {
 		if (!theme) return
 
@@ -44,12 +51,8 @@ export const AppLayout = ({ os, theme, setTheme }: { os?: string, theme?: string
 
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme }}>
-			<div
-				className={`grid h-screen ${
-					os === 'windows' ? 'grid-rows-[32px_1fr]' : 'grid-rows-1'
-				}`}
-			>
-				{os === 'windows' && <TitleBar />}
+			<div className='grid h-screen grid-rows-[32px_1fr]'>
+				<TitleBar />
 				<div className='flex h-full overflow-hidden'>
 					<Sidebar className='h-full' />
 					<main className='flex-1 p-12'>
