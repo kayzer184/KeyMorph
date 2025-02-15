@@ -7,7 +7,8 @@
 		"windows": [
 			{
 				"decorations": false,
-				"transparent": true
+				"transparent": true,
+				"shadow": false
 			}
 		]
 	}

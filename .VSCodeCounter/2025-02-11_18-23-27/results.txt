@@ -1,0 +1,87 @@
+Date : 2025-02-11 18:23:27
+Directory : c:\Users\Stas\VsCodeProjects\KeyMorph
+Total : 39 files,  5886 codes, 35 comments, 189 blanks, all 6110 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          8 |      4,319 |          0 |          7 |      4,326 |
+| TypeScript JSX     |         16 |        921 |          2 |        110 |      1,033 |
+| TypeScript         |          3 |        255 |         24 |         22 |        301 |
+| Rust               |          4 |        133 |          5 |         20 |        158 |
+| JavaScript         |          2 |        111 |          1 |          2 |        114 |
+| CSS                |          1 |         69 |          0 |          8 |         77 |
+| JSON with Comments |          1 |         26 |          3 |          5 |         34 |
+| HTML               |          2 |         24 |          0 |          4 |         28 |
+| YAML               |          1 |         24 |          0 |          7 |         31 |
+| Markdown           |          1 |          4 |          0 |          4 |          8 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                          | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                             |         39 |      5,886 |         35 |        189 |      6,110 |
+| . (Files)                                                                     |         11 |      4,419 |          9 |         23 |      4,451 |
+| .github                                                                       |          1 |         24 |          0 |          7 |         31 |
+| .github\workflows                                                             |          1 |         24 |          0 |          7 |         31 |
+| src                                                                           |         19 |      1,217 |         21 |        136 |      1,374 |
+| src (Files)                                                                   |          4 |        185 |          0 |         25 |        210 |
+| src-tauri                                                                     |          8 |        226 |          5 |         23 |        254 |
+| src-tauri (Files)                                                             |          4 |         74 |          0 |          4 |         78 |
+| src-tauri\capabilities                                                        |          1 |         22 |          0 |          0 |         22 |
+| src-tauri\src                                                                 |          3 |        130 |          5 |         19 |        154 |
+| src-tauri\src (Files)                                                         |          2 |        110 |          5 |         16 |        131 |
+| src-tauri\src\bin                                                             |          1 |         20 |          0 |          3 |         23 |
+| src\components                                                                |         13 |        805 |          2 |         93 |        900 |
+| src\components (Files)                                                        |          6 |        375 |          2 |         47 |        424 |
+| src\components\ui                                                             |          7 |        430 |          0 |         46 |        476 |
+| src\lib                                                                       |          2 |        227 |         19 |         18 |        264 |
++-------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                      | language           | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\Stas\VsCodeProjects\KeyMorph\.github\workflows\build-macos.yml       | YAML               |         24 |          0 |          7 |         31 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\README.md                               | Markdown           |          4 |          0 |          4 |          8 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\components.json                         | JSON               |         21 |          0 |          1 |         22 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\index.html                              | HTML               |         12 |          0 |          2 |         14 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\overlay.html                            | HTML               |         12 |          0 |          2 |         14 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\package-lock.json                       | JSON               |      4,145 |          0 |          1 |      4,146 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\package.json                            | JSON               |         47 |          0 |          1 |         48 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\postcss.config.js                       | JavaScript         |          6 |          0 |          1 |          7 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\build.rs                      | Rust               |          3 |          0 |          1 |          4 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\capabilities\default.json     | JSON               |         22 |          0 |          0 |         22 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\src\bin\background_process.rs | Rust               |         20 |          0 |          3 |         23 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\src\lib.rs                    | Rust               |        106 |          4 |         14 |        124 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\src\main.rs                   | Rust               |          4 |          1 |          2 |          7 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\tauri.conf.json               | JSON               |         41 |          0 |          1 |         42 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\tauri.macos.conf.json         | JSON               |         15 |          0 |          1 |         16 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\tauri.windows.conf.json       | JSON               |         15 |          0 |          1 |         16 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\App.tsx                  | TypeScript JSX     |         68 |          0 |         14 |         82 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\Menu.tsx                 | TypeScript JSX     |         47 |          2 |         10 |         59 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\Overlay.tsx              | TypeScript JSX     |         54 |          0 |          5 |         59 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\Settings.tsx             | TypeScript JSX     |         85 |          0 |         10 |         95 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\SideBar.tsx              | TypeScript JSX     |         40 |          0 |          4 |         44 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\TitleBar.tsx             | TypeScript JSX     |         81 |          0 |          4 |         85 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\button.tsx            | TypeScript JSX     |         51 |          0 |          6 |         57 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\card.tsx              | TypeScript JSX     |         71 |          0 |          9 |         80 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\input.tsx             | TypeScript JSX     |         19 |          0 |          4 |         23 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\keyboard.tsx          | TypeScript JSX     |         62 |          0 |          4 |         66 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\label.tsx             | TypeScript JSX     |         20 |          0 |          5 |         25 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\overlay-keyboard.tsx  | TypeScript JSX     |         62 |          0 |          4 |         66 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\select.tsx            | TypeScript JSX     |        145 |          0 |         14 |        159 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\lib\keyboard.ts                     | TypeScript         |        222 |         19 |         16 |        257 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\lib\utils.ts                        | TypeScript         |          5 |          0 |          2 |          7 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\main.tsx                            | TypeScript JSX     |          9 |          0 |          2 |         11 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\overlay.tsx                         | TypeScript JSX     |         55 |          0 |          9 |         64 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\router.tsx                          | TypeScript JSX     |         52 |          0 |          6 |         58 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\src\styles.css                          | CSS                |         69 |          0 |          8 |         77 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\tailwind.config.js                      | JavaScript         |        105 |          1 |          1 |        107 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\tsconfig.json                           | JSON with Comments |         26 |          3 |          5 |         34 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\tsconfig.node.json                      | JSON               |         13 |          0 |          1 |         14 |
+| c:\Users\Stas\VsCodeProjects\KeyMorph\vite.config.ts                          | TypeScript         |         28 |          5 |          4 |         37 |
+| Total                                                                         |                    |      5,886 |         35 |        189 |      6,110 |
++-------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

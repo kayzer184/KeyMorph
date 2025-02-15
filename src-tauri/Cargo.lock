@@ -2061,7 +2061,6 @@ dependencies = [
 [[package]]
 name = "key_director"
 version = "0.1.0"
-source = "git+https://github.com/kayzer184/KeyDirector#a81f16cf944b5e161f31bc58f5288c8698887b3d"
 dependencies = [
  "lazy_static",
  "macos-accessibility-client",

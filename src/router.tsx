@@ -6,7 +6,7 @@ import {
 import { useState, useEffect } from 'react'
 import { platform } from '@tauri-apps/plugin-os'
 import { invoke } from '@tauri-apps/api/core'
-import { Menu } from './components/Menu'
+import Menu from './components/Menu'
 import Settings from './components/Settings'
 import Overlay from './components/Overlay'
 import { AppLayout } from './components/App'

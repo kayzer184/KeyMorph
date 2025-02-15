@@ -14,6 +14,8 @@ export const ThemeContext = createContext<ThemeContextType>({
 	setTheme: () => {},
 })
 
+export const OSContext = createContext<string>('')
+
 interface AppLayoutProps {
 	os?: string
 	theme?: string
@@ -21,7 +23,7 @@ interface AppLayoutProps {
 	children?: ReactNode
 }
 
-export const AppLayout = ({ theme, setTheme }: AppLayoutProps) => {
+export const AppLayout = ({ os, theme, setTheme }: AppLayoutProps) => {
 	useEffect(() => {
 		document
 			.querySelectorAll('*')
@@ -51,15 +53,23 @@ export const AppLayout = ({ theme, setTheme }: AppLayoutProps) => {
 
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme }}>
-			<div className='grid h-screen grid-rows-[32px_1fr]'>
-				<TitleBar />
-				<div className='flex h-full overflow-hidden'>
-					<Sidebar className='h-full' />
-					<main className='flex-1 p-12'>
-						<Outlet />
-					</main>
+			<OSContext.Provider value={os || ''}>
+				<div
+					className={`grid h-screen w-screen bg-background text-foreground ${
+						os === 'windows' ? 'grid-rows-[32px_1fr]' : 'grid-rows-[28px_1fr]'
+					}`}
+				>
+					<TitleBar />
+					<div className='flex h-full overflow-hidden'>
+						<Sidebar />
+						<main className='flex-1 p-6 overflow-y-auto'>
+							<div className='max-w-4xl mx-auto'>
+								<Outlet />
+							</div>
+						</main>
+					</div>
 				</div>
-			</div>
+			</OSContext.Provider>
 		</ThemeContext.Provider>
 	)
 }

@@ -5,6 +5,8 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { IconSun, IconMoon, IconDeviceDesktop } from '@tabler/icons-react'
 
+import { invoke } from '@tauri-apps/api/core'
+
 export default function Settings() {
 	const { theme, setTheme } = useContext(ThemeContext)
 
@@ -27,6 +29,7 @@ export default function Settings() {
 								<Button variant='secondary'>Обзор</Button>
 							</div>
 						</div>
+
 
 						<div className='space-y-2'>
 							<label className='text-sm font-medium'>Язык</label>

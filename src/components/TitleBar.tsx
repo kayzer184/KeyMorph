@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { getCurrentWindow } from '@tauri-apps/api/window'
-import { platform, version } from '@tauri-apps/plugin-os'
 import type { Window } from '@tauri-apps/api/window'
+import { OSContext } from './App'
 
 export default function TitleBar() {
-	const [os, setOs] = useState<string>()
+	const os = useContext(OSContext)
 	const [isMaximized, setIsMaximized] = useState<boolean>()
 	const [appWindow, setAppWindow] = useState<Window>()
 
@@ -13,25 +13,16 @@ export default function TitleBar() {
 			const window = getCurrentWindow()
 			setAppWindow(window)
 			setIsMaximized(await window.isMaximized())
-			setOs(await platform())
-
-			const unlistenMaximized = await window.onResized(async () => {
-				setIsMaximized(await window.isMaximized())
-			})
-
-			return () => {
-				unlistenMaximized()
-			}
 		}
 		init()
 	}, [])
 
 	return (
-		<div className='bg-background border-b flex justify-end items-center select-none app-region-drag'>
+		<div
+			className='bg-card border-b flex justify-end items-center select-none app-region-drag'
+			data-tauri-drag-region
+		>
 			<div className='flex'>
-				<div className='title-bar-text'>
-					<p className='text-white'>OS Version: {version()}</p>
-				</div>
 				{os === 'windows' && (
 					<>
 						<button

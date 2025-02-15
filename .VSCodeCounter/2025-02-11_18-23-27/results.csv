@@ -1,0 +1,41 @@
+"filename", "language", "JSON with Comments", "JSON", "TypeScript", "JavaScript", "Rust", "Markdown", "HTML", "TypeScript JSX", "CSS", "YAML", "comment", "blank", "total"
+"c:\Users\Stas\VsCodeProjects\KeyMorph\.github\workflows\build-macos.yml", "YAML", 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 7, 31
+"c:\Users\Stas\VsCodeProjects\KeyMorph\README.md", "Markdown", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 8
+"c:\Users\Stas\VsCodeProjects\KeyMorph\components.json", "JSON", 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 22
+"c:\Users\Stas\VsCodeProjects\KeyMorph\index.html", "HTML", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 2, 14
+"c:\Users\Stas\VsCodeProjects\KeyMorph\overlay.html", "HTML", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 2, 14
+"c:\Users\Stas\VsCodeProjects\KeyMorph\package-lock.json", "JSON", 0, 4145, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4146
+"c:\Users\Stas\VsCodeProjects\KeyMorph\package.json", "JSON", 0, 47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 48
+"c:\Users\Stas\VsCodeProjects\KeyMorph\postcss.config.js", "JavaScript", 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\build.rs", "Rust", 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\capabilities\default.json", "JSON", 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\src\bin\background_process.rs", "Rust", 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 3, 23
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\src\lib.rs", "Rust", 0, 0, 0, 0, 106, 0, 0, 0, 0, 0, 4, 14, 124
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\src\main.rs", "Rust", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 1, 2, 7
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\tauri.conf.json", "JSON", 0, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 42
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\tauri.macos.conf.json", "JSON", 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src-tauri\tauri.windows.conf.json", "JSON", 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\App.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 68, 0, 0, 0, 14, 82
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\Menu.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 47, 0, 0, 2, 10, 59
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\Overlay.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 54, 0, 0, 0, 5, 59
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\Settings.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 85, 0, 0, 0, 10, 95
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\SideBar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 4, 44
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\TitleBar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 81, 0, 0, 0, 4, 85
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\button.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 51, 0, 0, 0, 6, 57
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\card.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 71, 0, 0, 0, 9, 80
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\input.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 4, 23
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\keyboard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 62, 0, 0, 0, 4, 66
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\label.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 5, 25
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\overlay-keyboard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 62, 0, 0, 0, 4, 66
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\components\ui\select.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 145, 0, 0, 0, 14, 159
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\lib\keyboard.ts", "TypeScript", 0, 0, 222, 0, 0, 0, 0, 0, 0, 0, 19, 16, 257
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\lib\utils.ts", "TypeScript", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\main.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 2, 11
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\overlay.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 55, 0, 0, 0, 9, 64
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\router.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 52, 0, 0, 0, 6, 58
+"c:\Users\Stas\VsCodeProjects\KeyMorph\src\styles.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 69, 0, 0, 8, 77
+"c:\Users\Stas\VsCodeProjects\KeyMorph\tailwind.config.js", "JavaScript", 0, 0, 0, 105, 0, 0, 0, 0, 0, 0, 1, 1, 107
+"c:\Users\Stas\VsCodeProjects\KeyMorph\tsconfig.json", "JSON with Comments", 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 5, 34
+"c:\Users\Stas\VsCodeProjects\KeyMorph\tsconfig.node.json", "JSON", 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"c:\Users\Stas\VsCodeProjects\KeyMorph\vite.config.ts", "TypeScript", 0, 0, 28, 0, 0, 0, 0, 0, 0, 0, 5, 4, 37
+"Total", "-", 26, 4319, 255, 111, 133, 4, 24, 921, 69, 24, 35, 189, 6110

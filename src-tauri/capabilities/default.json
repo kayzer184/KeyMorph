@@ -3,7 +3,8 @@
   "identifier": "main-capability",
   "description": "Capability for the main window",
   "windows": [
-    "main"
+    "main",
+    "overlay"
   ],
   "permissions": [
     "core:window:default",
